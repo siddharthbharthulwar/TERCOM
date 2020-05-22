@@ -5,6 +5,8 @@ import matplotlib.pyplot as plt
 import numpy.ma as ma
 import math
 import cv2 as cv
+from functions import harrisresponse
+
 
 def parseString(ns, ew):
 
@@ -28,7 +30,16 @@ n51e005 = r"D:\Documents\School\2020-21\TerCoM\raw\n51_e005_1arc_v3.tif"
 n52e004 = r"D:\Documents\School\2020-21\TerCoM\raw\n52_e004_1arc_v3.tif"
 n52e005 = r"D:\Documents\School\2020-21\TerCoM\raw\n52_e005_1arc_v3.tif"
 
+dem = load(parseString("n39", "w106"))
 
+plt.imshow(dem, cmap = 'terrain')
+plt.show()
 
-plt.imshow(load(parseString("n39", "w106")))
+plt.imshow(harrisresponse(dem) / np.amax(harrisresponse(dem)))
+plt.show()
+
+plt.imshow(harrisresponse(harrisresponse(dem)) / np.amax(harrisresponse(harrisresponse(dem))))
+plt.show()
+
+plt.contour(dem, cmap = 'terrain', levels = list(range(0, 5000, 100)))
 plt.show()
