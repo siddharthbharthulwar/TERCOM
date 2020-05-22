@@ -6,6 +6,11 @@ import numpy.ma as ma
 import math
 import cv2 as cv
 
+def parseString(ns, ew):
+
+
+    masterPath = r"D:\Documents\School\2020-21\TerCoM\raw\{}_{}_1arc_v3.tif".format(ns, ew)
+    return masterPath
 
 def load(path):
 
@@ -24,5 +29,6 @@ n52e004 = r"D:\Documents\School\2020-21\TerCoM\raw\n52_e004_1arc_v3.tif"
 n52e005 = r"D:\Documents\School\2020-21\TerCoM\raw\n52_e005_1arc_v3.tif"
 
 
-plt.imshow(load(n39w106))
+
+plt.imshow(load(parseString("n39", "w106")))
 plt.show()
