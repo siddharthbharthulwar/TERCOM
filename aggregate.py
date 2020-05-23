@@ -34,12 +34,12 @@ dem = load(parseString("n39", "w106"))
 
 plt.imshow(dem, cmap = 'terrain')
 plt.show()
-
+'''
 plt.imshow(harrisresponse(dem) / np.amax(harrisresponse(dem)))
 plt.show()
 
 plt.imshow(harrisresponse(harrisresponse(dem)) / np.amax(harrisresponse(harrisresponse(dem))))
 plt.show()
-
-plt.contour(dem, cmap = 'terrain', levels = list(range(0, 5000, 100)))
+'''
+plt.contour(dem, cmap = 'viridis', levels = list(range(0, 5000, 100)))
 plt.show()
